@@ -57,6 +57,10 @@ Partial Class frmDashboard
         Me.btnSaveConfig = New FontAwesome.Sharp.IconButton()
         Me.btnEditConfig = New FontAwesome.Sharp.IconButton()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtPoolHost = New System.Windows.Forms.TextBox()
+        Me.txtPoolPort = New System.Windows.Forms.TextBox()
         Me.pnlMenu.SuspendLayout()
         Me.pnlControl.SuspendLayout()
         CType(Me.PicLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -281,7 +285,7 @@ Partial Class frmDashboard
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label3.Font = New System.Drawing.Font("Poppins SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label3.Location = New System.Drawing.Point(47, 503)
+        Me.Label3.Location = New System.Drawing.Point(359, 536)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(78, 26)
         Me.Label3.TabIndex = 11
@@ -295,7 +299,7 @@ Partial Class frmDashboard
         Me.txtThreads.Enabled = False
         Me.txtThreads.Font = New System.Drawing.Font("Poppins SemiBold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtThreads.ForeColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(145, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.txtThreads.Location = New System.Drawing.Point(131, 503)
+        Me.txtThreads.Location = New System.Drawing.Point(443, 536)
         Me.txtThreads.Name = "txtThreads"
         Me.txtThreads.Size = New System.Drawing.Size(27, 27)
         Me.txtThreads.TabIndex = 12
@@ -445,7 +449,7 @@ Partial Class frmDashboard
         Me.btnCancel.IconColor = System.Drawing.Color.Red
         Me.btnCancel.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnCancel.IconSize = 70
-        Me.btnCancel.Location = New System.Drawing.Point(697, 435)
+        Me.btnCancel.Location = New System.Drawing.Point(697, 510)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(89, 60)
         Me.btnCancel.TabIndex = 10
@@ -463,7 +467,7 @@ Partial Class frmDashboard
         Me.btnSaveConfig.IconColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnSaveConfig.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnSaveConfig.IconSize = 30
-        Me.btnSaveConfig.Location = New System.Drawing.Point(590, 435)
+        Me.btnSaveConfig.Location = New System.Drawing.Point(590, 503)
         Me.btnSaveConfig.Name = "btnSaveConfig"
         Me.btnSaveConfig.Size = New System.Drawing.Size(101, 60)
         Me.btnSaveConfig.TabIndex = 9
@@ -482,7 +486,7 @@ Partial Class frmDashboard
         Me.btnEditConfig.IconColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnEditConfig.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btnEditConfig.IconSize = 30
-        Me.btnEditConfig.Location = New System.Drawing.Point(697, 435)
+        Me.btnEditConfig.Location = New System.Drawing.Point(697, 503)
         Me.btnEditConfig.Name = "btnEditConfig"
         Me.btnEditConfig.Size = New System.Drawing.Size(101, 60)
         Me.btnEditConfig.TabIndex = 8
@@ -499,12 +503,68 @@ Partial Class frmDashboard
         Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
         Me.ProgressBar1.TabIndex = 19
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label4.Font = New System.Drawing.Font("Poppins SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label4.Location = New System.Drawing.Point(49, 504)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(84, 26)
+        Me.Label4.TabIndex = 20
+        Me.Label4.Text = "PoolHost:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label5.Font = New System.Drawing.Font("Poppins SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label5.Location = New System.Drawing.Point(49, 536)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(80, 26)
+        Me.Label5.TabIndex = 21
+        Me.Label5.Text = "PoolPort:"
+        '
+        'txtPoolHost
+        '
+        Me.txtPoolHost.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.txtPoolHost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPoolHost.Cursor = System.Windows.Forms.Cursors.Default
+        Me.txtPoolHost.Enabled = False
+        Me.txtPoolHost.Font = New System.Drawing.Font("Poppins SemiBold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPoolHost.ForeColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(145, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.txtPoolHost.Location = New System.Drawing.Point(168, 506)
+        Me.txtPoolHost.Name = "txtPoolHost"
+        Me.txtPoolHost.Size = New System.Drawing.Size(404, 27)
+        Me.txtPoolHost.TabIndex = 22
+        Me.txtPoolHost.Text = "Test"
+        '
+        'txtPoolPort
+        '
+        Me.txtPoolPort.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.txtPoolPort.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPoolPort.Cursor = System.Windows.Forms.Cursors.Default
+        Me.txtPoolPort.Enabled = False
+        Me.txtPoolPort.Font = New System.Drawing.Font("Poppins SemiBold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPoolPort.ForeColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(145, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.txtPoolPort.Location = New System.Drawing.Point(168, 539)
+        Me.txtPoolPort.Name = "txtPoolPort"
+        Me.txtPoolPort.Size = New System.Drawing.Size(185, 27)
+        Me.txtPoolPort.TabIndex = 23
+        Me.txtPoolPort.Text = "Test"
+        '
         'frmDashboard
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1710, 1055)
         Me.ControlBox = False
+        Me.Controls.Add(Me.txtPoolPort)
+        Me.Controls.Add(Me.txtPoolHost)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.splitWallet)
         Me.Controls.Add(Me.splitAbout)
         Me.Controls.Add(Me.lblproc)
@@ -584,4 +644,8 @@ Partial Class frmDashboard
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents lblWalletSoon As Label
     Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtPoolHost As TextBox
+    Friend WithEvents txtPoolPort As TextBox
 End Class

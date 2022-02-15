@@ -41,33 +41,20 @@ Public Class frmDashboard
         txtWorkerName.Text = WorkerText
         txtWorkerWallet.Text = WalletText
         txtThreads.Text = Threads
-
-
-
     End Sub
     Private Sub BtnWallet_Click(sender As Object, e As EventArgs) Handles btnWallet.Click
         '// ========================= CONNECTION TO WALLET FORM =======================
-
         splitAbout.Visible = False
-
-        With btnWallet
-
-            splitWallet.Visible = True
-            .BringToFront()
-            .Show()
-
-        End With
-
+        splitWallet.Visible = True
+        splitWallet.BringToFront()
+        splitWallet.Show()
         '//=============================== color control
         'dashboard
-
         Me.btnDashboard.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnDashboard.IconColor = System.Drawing.SystemColors.ButtonHighlight
-
         'wallet
         Me.btnWallet.ForeColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(145, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.btnWallet.IconColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(145, Byte), Integer), CType(CType(248, Byte), Integer))
-
         'about
         Me.btnAbout.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnAbout.IconColor = System.Drawing.SystemColors.ButtonHighlight
@@ -76,29 +63,19 @@ Public Class frmDashboard
         '//========================= CONNECTION TO ABOUT FORM   =======================
         splitWallet.Visible = False
         '// color control
-
-
-        With btnAbout
-
-            splitAbout.Visible = True
-            .BringToFront()
-            .Show()
-
-        End With
-
+        splitAbout.Visible = True
+        splitAbout.BringToFront()
+        splitAbout.Show()
         '// =============================== color control
         'dashboard
         Me.btnDashboard.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnDashboard.IconColor = System.Drawing.SystemColors.ButtonHighlight
-
         'wallet
         Me.btnWallet.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnWallet.IconColor = System.Drawing.SystemColors.ButtonHighlight
-
         'about
         Me.btnAbout.ForeColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(145, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.btnAbout.IconColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(145, Byte), Integer), CType(CType(248, Byte), Integer))
-
     End Sub
     Private Sub BtnMin_Click(sender As Object, e As EventArgs) Handles btnMin.Click
         '// ========================= MINIMIZE =======================
@@ -143,7 +120,6 @@ Public Class frmDashboard
                     proc3.Kill()
                 Next
                 Application.ExitThread()
-
             End If
         End If
     End Sub
@@ -169,6 +145,16 @@ Public Class frmDashboard
         txtWorkerWallet.ForeColor = System.Drawing.SystemColors.ButtonFace
         txtWorkerWallet.BorderStyle = BorderStyle.None
         txtWorkerWallet.Font = New System.Drawing.Font("Poppins SemiBold", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        'PoolHost
+        txtPoolHost.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(34, Byte), Integer))
+        txtPoolHost.ForeColor = System.Drawing.SystemColors.ButtonFace
+        txtPoolHost.BorderStyle = BorderStyle.None
+        txtPoolHost.Font = New System.Drawing.Font("Poppins SemiBold", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        'PoolPort
+        txtPoolPort.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(34, Byte), Integer))
+        txtPoolPort.ForeColor = System.Drawing.SystemColors.ButtonFace
+        txtPoolPort.BorderStyle = BorderStyle.None
+        txtPoolPort.Font = New System.Drawing.Font("Poppins SemiBold", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         'threads Addresss
         txtThreads.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(34, Byte), Integer))
         txtThreads.ForeColor = System.Drawing.SystemColors.ButtonFace
@@ -189,6 +175,9 @@ Public Class frmDashboard
         txtWorkerName.Enabled = True
         txtWorkerWallet.Enabled = True
         txtThreads.Enabled = True
+        txtPoolHost.Enabled = True
+        txtPoolPort.Enabled = True
+
         'Worker Name
         txtWorkerName.BackColor = System.Drawing.SystemColors.ButtonFace
         txtWorkerName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
@@ -199,6 +188,17 @@ Public Class frmDashboard
         txtWorkerWallet.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         txtWorkerWallet.BorderStyle = BorderStyle.FixedSingle
         txtWorkerWallet.Font = New System.Drawing.Font("Poppins SemiBold", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        'PoolHost
+        txtPoolHost.BackColor = System.Drawing.SystemColors.ButtonFace
+        txtPoolHost.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        txtPoolHost.BorderStyle = BorderStyle.FixedSingle
+        txtPoolHost.Font = New System.Drawing.Font("Poppins SemiBold", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        'PoolPort
+        txtPoolPort.BackColor = System.Drawing.SystemColors.ButtonFace
+        txtPoolPort.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        txtPoolPort.BorderStyle = BorderStyle.FixedSingle
+        txtPoolPort.Font = New System.Drawing.Font("Poppins SemiBold", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+
         'threads Addresss
         txtThreads.BackColor = System.Drawing.SystemColors.ButtonFace
         txtThreads.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
@@ -210,10 +210,8 @@ Public Class frmDashboard
         btnCancel.Visible = True
         btnCancel.Enabled = True
         btnSaveConfig.ForeColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(145, Byte), Integer), CType(CType(248, Byte), Integer))
-
         btnEditConfig.Enabled = False
         btnEditConfig.ForeColor = System.Drawing.SystemColors.ButtonFace
-
     End Sub
     Private Sub FrmDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' ===============================================================================
@@ -227,10 +225,8 @@ Public Class frmDashboard
         '// Handlers
         IniHandler()
         DisableControl()
-
         'unconventional way to end erorrs lol
         Control.CheckForIllegalCrossThreadCalls = False
-
         'progressbar declaration
         ProgressBar1.Visible = False
         ProgressBar1.Style = ProgressBarStyle.Marquee
@@ -240,22 +236,18 @@ Public Class frmDashboard
         Me.ClientSize = New System.Drawing.Size(883, 629)
         Me.splitWallet.Location = New System.Drawing.Point(6, 75)
         Me.splitAbout.Location = New System.Drawing.Point(6, 75)
-
         '============================split about ===============================================
         '//                          splitabout
         splitAbout.Visible = False 'load splitabout false when the application is open
         '// this will display the text file about.text
         Dim abouttext As String
-
         Using reader As StreamReader = New StreamReader(startpath & "\configs\about.txt")
             abouttext = reader.ReadToEnd()
         End Using
         txtAbout.Text = abouttext
-
         '===========================split wallet ================================================
         '                           splitwallet
         splitWallet.Visible = False
-
     End Sub
     Private Sub BtnEditConfig_Click(sender As Object, e As EventArgs) Handles btnEditConfig.Click
         EnableControl()
@@ -267,6 +259,8 @@ Public Class frmDashboard
     Private Sub BtnSaveConfig_Click(sender As Object, e As EventArgs) Handles btnSaveConfig.Click
         file.Sections("CPU").Keys("WorkerName").Value = txtWorkerName.Text
         file.Sections("CPU").Keys("WalletAddress").Value = txtWorkerWallet.Text
+        file.Sections("CPU").Keys("PoolHost").Value = txtPoolHost.Text
+        file.Sections("CPU").Keys("PoolPort").Value = txtPoolPort.Text
         file.Sections("CPU").Keys("Threads").Value = txtThreads.Text
         file.Save(startpath & "\configs\user.ini")
         '///controls
@@ -299,7 +293,6 @@ Public Class frmDashboard
         '// process status
         lblproc.Visible = True
         ProgressBar1.Visible = True
-
         '// visibility and location for btnStopMining
         Me.pnlStopMining.Location = New System.Drawing.Point(324, 260)
         Me.lblproc.Font = New System.Drawing.Font("Poppins SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -322,15 +315,14 @@ Public Class frmDashboard
             Control.CheckForIllegalCrossThreadCalls = False
             worker.WorkerSupportsCancellation = True
             '/// ini files value for minerd
-            Dim workertext As String = file.Sections("cpu").Keys("workername").Value
-            Dim wallettext As String = file.Sections("cpu").Keys("walletaddress").Value
+            Dim workertext As String = file.Sections("CPU").Keys("workername").Value
+            Dim wallettext As String = file.Sections("CPU").Keys("walletaddress").Value
             Dim threadstext As String = file.Sections("CPU").Keys("Threads").Value
             '///[cpu] constant var
-            Dim poolhosttext As String = poolsetup.Sections("POOL").Keys("PoolHost").Value
-            Dim poolporttext As String = poolsetup.Sections("POOL").Keys("PoolPort").Value
+            Dim poolhosttext As String = file.Sections("CPU").Keys("PoolHost").Value
+            Dim poolporttext As String = file.Sections("CPU").Keys("PoolPort").Value
             Dim MinerConfig As String = "-a scrypt -o " + poolhosttext + ":" + poolporttext + " -t " + threadstext + " -u" + " " + wallettext
             Dim sOutput As String
-
             Dim info As New ProcessStartInfo("minerd.exe", MinerConfig)
             info.UseShellExecute = False
             info.RedirectStandardOutput = True
@@ -363,7 +355,6 @@ Public Class frmDashboard
         End While
         Await Task.Run(Sub() proc.WaitForExit())
         ProgressBar1.Visible = False
-
     End Sub
     Private Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         'this btn will end/cancel the edit function
@@ -391,9 +382,6 @@ Public Class frmDashboard
         '// Label Controls
         lblproc.Visible = False
         ProgressBar1.Visible = False
-        '// this will kill the minerd process to catch the
-        '// any errors of backgroundworker
-
     End Sub
     Private Sub Worker_ProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs) Handles worker.ProgressChanged
         lblproc.Text = e.ProgressPercentage.ToString
@@ -411,10 +399,9 @@ Public Class frmDashboard
         Me.btnAbout.IconColor = System.Drawing.SystemColors.ButtonHighlight
     End Sub
 
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles lblWalletSoon.Click
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
 
     End Sub
-
 
 
     ' ===============================================================================

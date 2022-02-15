@@ -1,0 +1,8 @@
+Main frame size
+
+883, 629
+
+panel
+
+size: 857, 495
+location 6, 75
