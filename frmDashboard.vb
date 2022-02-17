@@ -12,7 +12,7 @@ Public Class frmDashboard
     '      This is for INI file READ and WRITE
     Dim options As New IniOptions()
     Dim file As New IniFile(options)
-    Dim poolsetup As New IniFile(options)
+    'Dim poolsetup As New IniFile(options)
     Dim startpath As String = Application.StartupPath
     ''// threads
     Public thread1 As Thread 'thread for miner
@@ -29,17 +29,19 @@ Public Class frmDashboard
 
         '/// Load file from path.
         file.Load(startpath & "\configs\user.ini")
-        poolsetup.Load(startpath & "\configs\poolsetup.ini")
+
         '/// Read file's specific value.
         WorkerText = file.Sections("CPU").Keys("WorkerName").Value
         WalletText = file.Sections("CPU").Keys("WalletAddress").Value
-        PoolHostText = poolsetup.Sections("POOL").Keys("PoolHost").Value
-        PoolPortText = poolsetup.Sections("POOL").Keys("PoolPort").Value
+        PoolHostText = file.Sections("CPU").Keys("PoolHost").Value
+        PoolPortText = file.Sections("CPU").Keys("PoolPort").Value
         Threads = file.Sections("CPU").Keys("Threads").Value
 
         '/// FOR WALLET DISPLAY ON DASHBOARD
         txtWorkerName.Text = WorkerText
         txtWorkerWallet.Text = WalletText
+        txtPoolHost.Text = PoolHostText
+        txtPoolPort.Text = PoolPortText
         txtThreads.Text = Threads
     End Sub
     Private Sub BtnWallet_Click(sender As Object, e As EventArgs) Handles btnWallet.Click
@@ -321,7 +323,8 @@ Public Class frmDashboard
             '///[cpu] constant var
             Dim poolhosttext As String = file.Sections("CPU").Keys("PoolHost").Value
             Dim poolporttext As String = file.Sections("CPU").Keys("PoolPort").Value
-            Dim MinerConfig As String = "-a scrypt -o " + poolhosttext + ":" + poolporttext + " -t " + threadstext + " -u" + " " + wallettext
+
+            Dim MinerConfig As String = "-a scrypt -o " + poolhosttext + ":" + poolporttext + " -t " + threadstext + " -u " + " " + wallettext
             Dim sOutput As String
             Dim info As New ProcessStartInfo("minerd.exe", MinerConfig)
             info.UseShellExecute = False
@@ -366,22 +369,29 @@ Public Class frmDashboard
         Me.PicLogo.Location = New System.Drawing.Point(168, 95)
     End Sub
     Private Sub BtnStopMining_Click(sender As Object, e As EventArgs) Handles btnStopMining.Click
+
+        '// ========================= STOP MINING =======================
         '// This Button will end the mining processs
-        proc.Kill()
-        Me.pnlStopMining.Location = New System.Drawing.Point(324, 260)
-        btnStopMining.Visible = False
-        btnStopMining.Enabled = False
-        pnlStopMining.Visible = False
-        '//  btnStartMining controls
-        btnStartMining.Visible = True
-        btnStartMining.Enabled = True
-        pnlMining.Visible = True
-        '//  btnSetup controls
-        btnEditConfig.Visible = True
-        btnEditConfig.Enabled = True
-        '// Label Controls
-        lblproc.Visible = False
-        ProgressBar1.Visible = False
+        Dim response As Integer
+        response = MessageBox.Show("Mining still in progress, End?", "Stop Mining",
+                                      MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If response = vbYes Then
+            proc.Kill()
+            Me.pnlStopMining.Location = New System.Drawing.Point(324, 260)
+            btnStopMining.Visible = False
+            btnStopMining.Enabled = False
+            pnlStopMining.Visible = False
+            '//  btnStartMining controls
+            btnStartMining.Visible = True
+            btnStartMining.Enabled = True
+            pnlMining.Visible = True
+            '//  btnSetup controls
+            btnEditConfig.Visible = True
+            btnEditConfig.Enabled = True
+            '// Label Controls
+            lblproc.Visible = False
+            ProgressBar1.Visible = False
+        End If
     End Sub
     Private Sub Worker_ProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs) Handles worker.ProgressChanged
         lblproc.Text = e.ProgressPercentage.ToString
